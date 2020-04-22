@@ -31,6 +31,8 @@ class PID {
    */
   double TotalError();
 
+  void Twiddle();
+
  private:
   /**
    * PID Errors

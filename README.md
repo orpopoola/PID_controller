@@ -2,6 +2,17 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## Reflections
+For this PID controller, the main challenge was tunning the controller variables (proportional gain, integral gain and differential gain). In order to do this I started with low values for the gains and first increased the propotional gain but then I started noticing lot of oscillations. To address this I used a large differential gain to dampen the oscillations. Finally, I added a very small integral gain to remove steady state error. 
+I kept tunning and noticed the system oscillates out of control somewhere in the track. To address this, I reduced the throttle speed. By so doing, I was able to keep the car on track for a full cycle.
+Final values used for the gains are 
+Kp =  0.2
+Ki = 0.0003
+Kd = 10
+Throttle value = 0.1
+Throttle speed about 10mph
+
+In general, the PID controller is not good enough to handle the control of a car steering. With correctly tuned values, it may get better or high speeds, but an advanced controller such as the MPC would be more appropriate for this problem.
 
 ## Dependencies
 
