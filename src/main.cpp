@@ -30,6 +30,22 @@ string hasData(string s) {
   }
   return "";
 }
+//Start twiddle code
+bool twiddle_on_ = false;
+double twiddle_best_error_ = 1000000;
+bool twiddle_state_ = 0;
+int twiddle_idx = 0;
+int twiddle_iterations_ = 0;
+std::vector<double> p = {0.27, 0.001, 3.0};
+std::vector<double> dp = {0.05, 0.001, 0.05};
+void twiddle(PID &pid_control) {
+  std::cout << "State: " << twiddle_state_ << std::endl;
+  std::cout << "PID Error: " << pid_control.TotalError() << ", Best Error: " << twiddle_best_error_ << std::endl;
+  
+  }
+  pid_control.Init(p[0], p[1], p[2]);
+}
+// End Twiddle
 
 int main() {
   uWS::Hub h;
