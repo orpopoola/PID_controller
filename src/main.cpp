@@ -90,8 +90,8 @@ int main() {
    * TODO: Initialize the pid variable.
    */
   double init_kp = 0.2;
-  double init_ki = 0.0003;
-  double init_kd = 10.;
+  double init_ki = 0.00038; //0.0003
+  double init_kd = 4.; //10
   pid.Init(init_kp, init_ki, init_kd);
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 
                      uWS::OpCode opCode) {
